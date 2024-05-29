@@ -12,7 +12,7 @@ package LinkedList;
 
 public class ModifiedCircularLinkedList {
 
-    private ListNode head;
+    private ListNode2 head;
 
     // Constructor to initialize an empty circular linked list
     public ModifiedCircularLinkedList() {
@@ -21,7 +21,7 @@ public class ModifiedCircularLinkedList {
 
     // Insert a new node at the beginning of the circular linked list (insertion from head)
     public void insertFromHead(int val) {
-        ListNode newNode = new ListNode(val);
+        ListNode2 newNode = new ListNode2(val);
         if (head == null) {
             newNode.next = newNode; // Make it circular
             head = newNode;
@@ -39,7 +39,7 @@ public class ModifiedCircularLinkedList {
         if (head == null || head.next == head) {
             head = null; // Empty list or single node list
         } else {
-            ListNode current = head;
+            ListNode2 current = head;
             while (current.next.next != head) {
                 current = current.next;
             }
@@ -52,7 +52,7 @@ public class ModifiedCircularLinkedList {
         if (head == null) {
             return;
         }
-        ListNode current = head;
+        ListNode2 current = head;
         do {
             System.out.print(current.val + " ");
             current = current.next;

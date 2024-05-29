@@ -166,6 +166,7 @@ class BST {
         System.out.println("Minimum value: " + bst.getMinValue());
         System.out.println("Maximum value: " + bst.getMaxValue());
         System.out.println("Is balanced: " + bst.isBalanced());
+        System.out.println("");
 
         bst.search(10);
         bst.search(100);
@@ -178,6 +179,7 @@ class BST {
         System.out.println("Maximum value: " + bst.getMaxValue());
         System.out.println("Is balanced: " + bst.isBalanced());
         bst.search(20);
+        System.out.println("");
 
         bst.delete(15);
         System.out.println("Delete 15:");
@@ -187,6 +189,7 @@ class BST {
         System.out.println("Maximum value: " + bst.getMaxValue());
         System.out.println("Is balanced: " + bst.isBalanced());
         bst.search(15);
+        System.out.println("");
 
         bst.delete(8);
         System.out.println("Delete 8:");
@@ -196,6 +199,7 @@ class BST {
         System.out.println("Maximum value: " + bst.getMaxValue());
         System.out.println("Is balanced: " + bst.isBalanced());
         bst.search(8);
+        System.out.println("");
     }
 
 

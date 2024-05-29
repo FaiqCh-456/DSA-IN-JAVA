@@ -13,12 +13,12 @@ package LinkedList;
 public class LinkedListPalindrome {
 
     // Add a node to the end of the linked list
-    public static ListNode add(ListNode head, int val) {
-        ListNode newNode = new ListNode(val);
+    public static ListNode2 add(ListNode2 head, int val) {
+        ListNode2 newNode = new ListNode2(val);
         if (head == null) {
             return newNode;
         } else {
-            ListNode current = head;
+            ListNode2 current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -28,10 +28,10 @@ public class LinkedListPalindrome {
     }
 
     // Reverse a linked list
-    public static ListNode reverse(ListNode head) {
-        ListNode prev = null;
-        ListNode current = head;
-        ListNode next;
+    public static ListNode2 reverse(ListNode2 head) {
+        ListNode2 prev = null;
+        ListNode2 current = head;
+        ListNode2 next;
         while (current != null) {
             next = current.next;
             current.next = prev;
@@ -42,25 +42,25 @@ public class LinkedListPalindrome {
     }
 
     // Check if the linked list is a palindrome
-    public static boolean isPalindrome(ListNode head) {
+    public static boolean isPalindrome(ListNode2 head) {
         if (head == null || head.next == null) {
             return true;
         }
 
         // Find the middle of the linked list
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode2 slow = head;
+        ListNode2 fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
         // Reverse the second half of the linked list
-        ListNode secondHalf = reverse(slow);
+        ListNode2 secondHalf = reverse(slow);
 
         // Compare the first half and the reversed second half
-        ListNode firstHalf = head;
-        ListNode temp = secondHalf; // to restore the list later
+        ListNode2 firstHalf = head;
+        ListNode2 temp = secondHalf; // to restore the list later
         while (secondHalf != null) {
             if (firstHalf.val != secondHalf.val) {
                 return false;
@@ -76,8 +76,8 @@ public class LinkedListPalindrome {
     }
 
     // Print the linked list
-    public static void printList(ListNode head) {
-        ListNode current = head;
+    public static void printList(ListNode2 head) {
+        ListNode2 current = head;
         while (current != null) {
             System.out.print(current.val + " ");
             current = current.next;
@@ -86,7 +86,7 @@ public class LinkedListPalindrome {
     }
 
     public static void main(String[] args) {
-        ListNode head = null;
+        ListNode2 head = null;
         head = add(head, 1);
         head = add(head, 2);
         head = add(head, 3);

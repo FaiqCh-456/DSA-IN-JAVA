@@ -14,13 +14,13 @@ package LinkedList;
 public class SearchSumNodes {
 
     // Find two nodes whose sum equals k in a singly linked list
-    public static int[] findNodesWithSum(ListNode head, int k) {
+    public static int[] findNodesWithSum(ListNode2 head, int k) {
         if (head == null || head.next == null) {
             return null; // Not enough nodes in the list
         }
 
-        ListNode ptr1 = head;
-        ListNode ptr2 = head;
+        ListNode2 ptr1 = head;
+        ListNode2 ptr2 = head;
 
         // Move ptr2 to the end of the list
         while (ptr2.next != null) {
@@ -28,7 +28,7 @@ public class SearchSumNodes {
         }
 
         while (ptr2 != null && ptr1 != ptr2) {
-            ListNode ptr3 = ptr1;
+            ListNode2 ptr3 = ptr1;
             while (ptr3 != ptr2) {
                 if (ptr1.val + ptr3.val == k) {
                     return new int[]{ptr1.val, ptr3.val};
@@ -44,12 +44,12 @@ public class SearchSumNodes {
 
     public static void main(String[] args) {
         // Create a linked list: 1 -> 2 -> 3 -> 4 -> 5 -> 6
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-        head.next.next.next.next.next = new ListNode(6);
+        ListNode2 head = new ListNode2(1);
+        head.next = new ListNode2(2);
+        head.next.next = new ListNode2(3);
+        head.next.next.next = new ListNode2(4);
+        head.next.next.next.next = new ListNode2(5);
+        head.next.next.next.next.next = new ListNode2(6);
 
         int k = 10;
         int[] result = findNodesWithSum(head, k);

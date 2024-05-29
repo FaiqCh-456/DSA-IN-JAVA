@@ -2,7 +2,7 @@ package LinkedList;
 
 class ListNode {
     int val;
-    ListNode next;
+    ListNode2 next;
 
     ListNode(int val) {
         this.val = val;
@@ -12,10 +12,10 @@ class ListNode {
 
 public class MergeSortedLists {
 
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public static ListNode2 mergeTwoLists(ListNode2 l1, ListNode2 l2) {
         // Create a dummy node to act as the start of the merged list
-        ListNode dummy = new ListNode(0);
-        ListNode current = dummy;
+        ListNode2 dummy = new ListNode2(0);
+        ListNode2 current = dummy;
 
         // Traverse both lists
         while (l1 != null && l2 != null) {
@@ -42,8 +42,8 @@ public class MergeSortedLists {
     }
 
     // Utility method to print the linked list
-    public static void printList(ListNode head) {
-        ListNode current = head;
+    public static void printList(ListNode2 head) {
+        ListNode2 current = head;
         while (current != null) {
             System.out.print(current.val + " ");
             current = current.next;
@@ -53,14 +53,14 @@ public class MergeSortedLists {
 
     public static void main(String[] args) {
         // Creating first sorted linked list: 1 -> 3 -> 5
-        ListNode l1 = new ListNode(1);
-        l1.next = new ListNode(3);
-        l1.next.next = new ListNode(5);
+        ListNode2 l1 = new ListNode2(1);
+        l1.next = new ListNode2(3);
+        l1.next.next = new ListNode2(5);
 
         // Creating second sorted linked list: 2 -> 4 -> 6
-        ListNode l2 = new ListNode(2);
-        l2.next = new ListNode(4);
-        l2.next.next = new ListNode(6);
+        ListNode2 l2 = new ListNode2(2);
+        l2.next = new ListNode2(4);
+        l2.next.next = new ListNode2(6);
 
         System.out.print("List 1: ");
         printList(l1);
@@ -69,7 +69,7 @@ public class MergeSortedLists {
         printList(l2);
 
         // Merging the two sorted linked lists
-        ListNode mergedList = mergeTwoLists(l1, l2);
+        ListNode2 mergedList = mergeTwoLists(l1, l2);
 
         System.out.print("Merged List: ");
         printList(mergedList);

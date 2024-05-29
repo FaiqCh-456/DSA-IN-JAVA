@@ -12,20 +12,20 @@ package LinkedList;
 
 public class PairwiseSwap {
 
-    public static ListNode swapPairs(ListNode head) {
+    public static ListNode2 swapPairs(ListNode2 head) {
         if (head == null || head.next == null) {
             return head; // No need to swap if the list is empty or has only one node
         }
 
         // Create a dummy node to handle edge cases
-        ListNode dummy = new ListNode(0);
+        ListNode2 dummy = new ListNode2(0);
         dummy.next = head;
-        ListNode prev = dummy;
+        ListNode2 prev = dummy;
 
         // Traverse the list and swap pairs of nodes
         while (prev.next != null && prev.next.next != null) {
-            ListNode firstNode = prev.next;
-            ListNode secondNode = prev.next.next;
+            ListNode2 firstNode = prev.next;
+            ListNode2 secondNode = prev.next.next;
 
             // Swap nodes
             prev.next = secondNode;
@@ -40,8 +40,8 @@ public class PairwiseSwap {
     }
 
     // Print the linked list
-    public static void printList(ListNode head) {
-        ListNode current = head;
+    public static void printList(ListNode2 head) {
+        ListNode2 current = head;
         while (current != null) {
             System.out.print(current.val + " ");
             current = current.next;
@@ -51,12 +51,12 @@ public class PairwiseSwap {
 
     public static void main(String[] args) {
         // Create a linked list: 1 -> 2 -> 3 -> 4 -> 5 -> 6
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-        head.next.next.next.next.next = new ListNode(6);
+        ListNode2 head = new ListNode2(1);
+        head.next = new ListNode2(2);
+        head.next.next = new ListNode2(3);
+        head.next.next.next = new ListNode2(4);
+        head.next.next.next.next = new ListNode2(5);
+        head.next.next.next.next.next = new ListNode2(6);
 
         System.out.print("Original Linked List: ");
         printList(head);

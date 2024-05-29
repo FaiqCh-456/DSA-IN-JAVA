@@ -10,15 +10,15 @@ package LinkedList;
 //}
 public class SinglyLinkedList {
 
-    private ListNode head;
+    private ListNode2 head;
 
     // Add a node to the end of the linked list
     public void add(int val) {
-        ListNode newNode = new ListNode(val);
+        ListNode2 newNode = new ListNode2(val);
         if (head == null) {
             head = newNode;
         } else {
-            ListNode current = head;
+            ListNode2 current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -27,13 +27,13 @@ public class SinglyLinkedList {
     }
 
     // Find the middle node of the linked list
-    public ListNode findMiddle() {
+    public ListNode2 findMiddle() {
         if (head == null) {
             return null;
         }
 
-        ListNode slowPointer = head;
-        ListNode fastPointer = head;
+        ListNode2 slowPointer = head;
+        ListNode2 fastPointer = head;
 
         // Move fastPointer twice as fast as slowPointer
         while (fastPointer != null && fastPointer.next != null) {
@@ -47,7 +47,7 @@ public class SinglyLinkedList {
 
     // Print the linked list
     public void printList() {
-        ListNode current = head;
+        ListNode2 current = head;
         while (current != null) {
             System.out.print(current.val + " ");
             current = current.next;
@@ -69,7 +69,7 @@ public class SinglyLinkedList {
         list.printList();
 
         // Finding the middle of the linked list
-        ListNode middleNode = list.findMiddle();
+        ListNode2 middleNode = list.findMiddle();
         if (middleNode != null) {
             System.out.println("Middle Node: " + middleNode.val);
         } else {

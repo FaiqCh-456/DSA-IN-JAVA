@@ -10,18 +10,18 @@ package LinkedList;
 //    }
 //}
 
-public class CircularLinkedList {
-    private ListNode head;
-    private ListNode tail;
+public class CircularLinkedList1 {
+    ListNode2 head;
+    private ListNode2 tail;
 
-    public CircularLinkedList() {
+    public CircularLinkedList1() {
         this.head = null;
         this.tail = null;
     }
 
     // Add node to the end of the circular linked list
     public void add(int val) {
-        ListNode newNode = new ListNode(val);
+        ListNode2 newNode = new ListNode2(val);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -39,10 +39,10 @@ public class CircularLinkedList {
             return; // Empty list or single node list, no need to reverse
         }
 
-        ListNode prev = null;
-        ListNode current = head;
-        ListNode next;
-        ListNode start = head;
+        ListNode2 prev = null;
+        ListNode2 current = head;
+        ListNode2 next;
+        ListNode2 start = head;
 
         do {
             next = current.next;
@@ -60,7 +60,7 @@ public class CircularLinkedList {
         if (head == null) {
             return;
         }
-        ListNode current = head;
+        ListNode2 current = head;
         do {
             System.out.print(current.val + " ");
             current = current.next;
@@ -69,7 +69,7 @@ public class CircularLinkedList {
     }
 
     public static void main(String[] args) {
-        CircularLinkedList cll = new CircularLinkedList();
+        CircularLinkedList1 cll = new CircularLinkedList1();
         cll.add(1);
         cll.add(2);
         cll.add(3);
