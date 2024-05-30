@@ -1,4 +1,4 @@
-package BST;
+package Lab_final;
 
 class TreeNode1 {
     int key;
@@ -28,7 +28,7 @@ class BST {
     private TreeNode1 insertRec(TreeNode1 node, int key, int level) {
         if (node == null) {
             size++;
-            System.out.println("Inserted key " + key + " at level " + level);
+            System.out.println("Inserted node  " + key + " at level " + level);
             return new TreeNode1(key);
         }
 
@@ -44,8 +44,6 @@ class BST {
         return node;
     }
 
-
-
     public int getHeight() {
         return getHeight(root);
     }
@@ -56,8 +54,6 @@ class BST {
         }
         return node.height;
     }
-
-
 
     public boolean isBalanced() {
         return isBalancedRec(root);
@@ -78,27 +74,34 @@ class BST {
         return isBalancedRec(node.left) && isBalancedRec(node.right);
     }
 
+    public void preorderTraversal() {
+        System.out.print("Preorder traversal: ");
+        preorderRec(root);
+        System.out.println();
+    }
+
+    private void preorderRec(TreeNode1 node) {
+        if (node != null) {
+            System.out.print(node.key + " ");
+            preorderRec(node.left);
+            preorderRec(node.right);
+        }
+    }
+
     public static void main(String[] args) {
         BST bst = new BST();
 
-        int[] elements = {7,3,9,2,5,8,10};
+        int[] elements = {7, 3, 9, 2, 5, 8, 10};
         for (int el : elements) {
             bst.insert(el);
         }
-        System.out.println("");
+        System.out.println();
 
-        System.out.println("Depth: " + bst.getHeight());
-
-        System.out.println("Is balanced: " + bst.isBalanced());
-        System.out.println("");
-
-
-
-
-
+        System.out.println("Depth of the Tree: " + bst.getHeight());
+        bst.preorderTraversal();
+        System.out.println("Is the tree a BST? : " + bst.isBalanced());
+        System.out.println();
 
 
     }
-
-
 }
